@@ -1,0 +1,5 @@
+Dear {{ teacher.first_name }},
+You have a new appointment booked on : {{ date }}
+Sincerely,
+Admin
+Note: replies to this email address are not monitored.

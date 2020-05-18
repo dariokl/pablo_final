@@ -1,0 +1,7 @@
+.env
+migrations
+__pycache__/
+pablo_venv/
+.idea
+Procfile
+

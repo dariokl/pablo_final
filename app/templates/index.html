@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="d-flex align-items-center position-relative vh-100 img-fluid"
+         style="background-image:url(/static/images/implantacion.jpg); background-size: cover;">
+    <div class="container-fluid container-fluid-max">
+        <div class="row">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <h1>Live an unforgettable experience in NAME OF COMPANY!</h1>
+                <div class="mt-3">
+                    <a class="btn bg-red  mr-2" href="{{ url_for('users.register') }}" role="button">Register</a>
+                    <a class="btn bg-red mr-2" href="{{ url_for('core.booking') }}" role="button">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container">
+    <div class="row landing">
+        <h1 class="centered">WE ARE COMPANY</h1>
+        <hr>
+        <div class="row landing">
+            <div class="col-lg-4 col-md-4">
+                <h3 style="color: var(--third-bg-color);">About Our Company</h3>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae corporis culpa debitis dolore
+                    dolores enim eveniet ex, harum hic.</p>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae corporis culpa debitis dolore
+                    dolores enim eveniet ex, harum hic.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 box-no-border">
+                <ion-icon name="apps-outline"></ion-icon>
+                <h4>TRAINING</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae corporis culpa debitis dolore
+                    dolores enim eveniet ex, harum hic.</p>
+            </div>
+            <div class="col-md-4 box-no-border">
+                <ion-icon name="apps-outline"></ion-icon>
+                <h4>TRAINING</h4>
+                <p>SLorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae corporis culpa debitis dolore
+                    dolores enim eveniet ex, harum hic</p>
+            </div>
+            <div class="col-md-4 box-no-border">
+                <ion-icon name="apps-outline"></ion-icon>
+                <h4>TRAINING</h4>
+                <p class="end"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae corporis culpa debitis dolore dolores enim eveniet ex, harum hic molestias odio odit porro praesentium recusandae reiciendis sit totam veniam voluptas?</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

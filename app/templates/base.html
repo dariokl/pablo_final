@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.4/css/intlTelInput.css">
+    {% block head %} {% endblock %}
+
+    <title>E Train</title>
+
+</head>
+<body>
+{% if current_user.is_authenticated %}
+<nav class="navbar navbar-expand-lg navbar-light fixed-top justify-content-bewtween">
+    <a class="navbar-brand" href="#">
+        <img src="/static/images/logo.png" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for('core.index') }}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for ('core.services') }}">Services</a>
+            </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for ('core.feedback') }}">Customer Cases</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for('core.contact_us') }}">Contact Us</a>
+            </li>
+            <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="fa fa-user"></i>
+  </button>
+  <div class="dropdown-menu pull-left" aria-labelledby="dropdownMenuButton" style="margin-left: -7rem;">
+      {% if current_user.confirmed %}
+    <a class="dropdown-item" href="{{ url_for('users.logout') }}">Log Out</a>
+      {% else %}
+      <a class="dropdown-item" href="{{ url_for('users.logout') }}">Log Out</a>
+      <a class="dropdown-item" href="{{ url_for('users.verify_resend') }}">Verify Your Email!</a>
+      {% endif %}
+  </div>
+</div>
+        </div>
+</nav>
+{% else %}
+<nav class="navbar navbar-expand-lg navbar-light fixed-top justify-content-bewtween">
+    <a class="navbar-brand" href="#">
+    <img src="/static/images/logo.png" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for('core.index') }}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for ('core.services') }}">Services</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for ('core.feedback') }}">Customer Cases</a>
+            </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for('core.contact_us') }}">Contact Us</a>
+            </li>
+            <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="fa fa-user"></i>
+  </button>
+  <div class="dropdown-menu pull-left" aria-labelledby="dropdownMenuButton" style="margin-left: -7rem;">
+  <a class="dropdown-item" href="{{ url_for('users.register') }}">Register</a>
+   <a class="dropdown-item" href="{{ url_for('users.login') }}">Log In</a>
+  </div>
+</div>
+        </ul>
+    </div>
+</nav>
+{% endif %}
+<div class="container">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {{message}}
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+</div>
+{% block content %} {% endblock %}
+
+</section>
+<footer class="page-footer font-small">
+
+  <!-- Copyright -->
+  <div class="col footer-copyright text-center py-3"> © 2020 Clever Consulting - Consultoría inteligente para una sociedad digital.
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.0/js/intlTelInput.min.js"></script>
+{% block scripts %} {% endblock %}
+</body>
+</html>

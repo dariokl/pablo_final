@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block head %}
+{{ super () }}
+<style>
+    footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="min-vh-100">
+<div class="container">
+    <div class="row ">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5 " >
+                <div class="card-body">
+                    <h5 class="card-title text-center">Sign In</h5>
+                    <form method="POST">
+                        {{ form.hidden_tag() }}
+                        <div class="form-label-group">
+                            {{ form.email.label }}
+                            {{ form.email(class='form-control', placeholder='Username') }}
+                        </div>
+                        <div class="form-label-group">
+                            {{ form.password.label }}
+                            {{ form.password(class='form-control', placeholder='Password') }}
+                        </div>
+                        {{ form.submit( class='btn btn-primary mt-4' )}}
+                        <div class="row justify-content-start mt-4">
+                            <hr class="my-4">
+                            <div class="col">
+                               <a href="{{ url_for('users.reset_password_request') }}"> <span>Forgot your password ?</span></a>
+                            </div>
+                        </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="col text-center">
+        <a class="btn" href="{{ url_for('core.contact_us') }}">Contact Us</a>
+    </div>
+</div>
+</section>
+{% endblock %}

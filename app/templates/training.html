@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="min-vh-100">
+<div class="container">
+        <div class="d-flex justify-content-center">
+        <ion-icon name="build-outline" size="large"></ion-icon>
+    </div>
+        <h1 class="text-center">Training</h1>
+        <hr>
+    <div class="row landing">
+      <div class="col-lg-4 col-md-4">
+        <h3>Book training</h3>
+      </div>
+
+      <div class="col-lg-4 col-md-4">
+        <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aliquid, aperiam consequuntur doloremque doloribus eaque earum enim eos facere illum ipsa nostrum quod rerum soluta totam veniam voluptatem voluptatum?</span><span>Commodi doloribus iste, laudantium nihil odio praesentium quo sed tempora? Blanditiis deleniti et impedit itaque laborum minima nulla sunt tempora tempore voluptas. Debitis, dicta, incidunt? Ab aliquid consequatur possimus temporibus!</span></p>
+      </div>
+
+      <div class="col-lg-4 col-md-4">
+        <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem cumque dignissimos expedita ipsam laudantium magnam mollitia nesciunt qui saepe tempora? Consequuntur ducimus exercitationem, impedit libero perferendis saepe sapiente sunt voluptates!</span></p>
+      </div>
+    </div>
+    <!-- /row -->
+  </div>
+
+  <div class="container mt">
+      <hr>
+    <div class="row landing">
+        {% for training in all_trainings %}
+      <div class="col-lg-3 col-md-3 highlight border">
+        <h3>{{ training.name }}</h3>
+          <div class="row no-gutter">
+        <div class="col">
+          <sup>euro:</sup>
+          <ins>{{ training.price }}</ins>
+        </div>
+          <div class="col">
+          <sup>Duration:</sup>
+          <ins>{{ training.duration }} hours</ins>
+        </div>
+        </div>
+        <p class="mt-2">
+        {{ training.description }}
+        </p>
+        <p class="mt-2">
+          <a href="{{ url_for ('core.booking') }}" class="btn btn-lg btn-theme">Get Started</a>
+        </p>
+      </div>
+        {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

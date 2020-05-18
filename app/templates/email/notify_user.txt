@@ -1,0 +1,9 @@
+Dear {{ user.first_name }},
+
+You have successfully booked an course on : <strong>{{ date }}</strong>
+
+
+Sincerely,
+Admin
+
+Note: replies to this email address are not monitored.

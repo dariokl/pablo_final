@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block content %}
+{% block head %}
+{{ super () }}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css" rel="stylesheet"/>
+{% endblock %}
+<section class="min-vh-100">
+<div class="container">
+    <div class="d-flex justify-content-center">
+        <ion-icon name="build-outline" size="large"></ion-icon>
+    </div>
+    <h1 class="text-center">Booking</h1>
+    <hr>
+    <div class="col-sm-12 col-lg-12">
+        <img src="static/images/formacion.jpg" class="img-fluid" alt="">
+    </div>
+       <div class="col">
+        <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus accusantium at atque deleniti eligendi, expedita labore necessitatibus officia, omnis perferendis placeat reiciendis reprehenderit saepe temporibus, veniam voluptatibus. Iste, minus.</span><span>Aut minima tenetur ullam. Cum eum harum natus quam vel? Accusantium blanditiis cupiditate dolorem excepturi facilis nam, nostrum praesentium quaerat quam quidem quis quod, reprehenderit, repudiandae veniam vitae voluptatibus voluptatum.</span>
+        </p>
+        <hr>
+    </div>
+      <div class="row end">
+      {% for course in training_list %}
+            <div class="col-md-4 box-no-border">
+                <ion-icon name="apps-outline"></ion-icon>
+                <h4>{{ course.name }}</h4>
+                <p>{{ course. description }}</p><p>
+                <h6>Euros : {{ course. price }} | Duration: {{ course.duration }} Hours |</h6>
+                <form method="POST" id="{{course.id}}">
+{{ form.hidden_tag() }}
+{{ form.name(value=course.id, id=course.id, type='hidden') }}
+{{ form.date(class='dateTxt', id=course.id, placeholder='Select date' )}}
+{{ form.submit(class='btn form-control', id=course.id)}}
+</form>
+            </div>
+      {% endfor %}
+  </div>
+</div>
+    </section>
+{% block scripts %}
+<script>
+var date = new Date();
+var today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+console.log(today);
+    $(function () {
+        $('.dateTxt').datepicker({
+            weekStart: 1,
+            daysOfWeekHighlighted: "6,0",
+            autoclose: true,
+            todayHighlight: true,
+            format: 'd/mm/yyyy',
+            daysOfWeekDisabled: "0,2,3,4,5,6",
+            startDate: '-0d',
+        });
+    });
+</script>
+{% endblock %}
+{% endblock %}

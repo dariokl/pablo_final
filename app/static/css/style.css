@@ -1,0 +1,190 @@
+
+:root {
+	--main-bg-color: whitesmoke;
+	--second-bg-color: #c7af6b;
+	--third-bg-color: #696E74;
+	--fo-bg-color: #686673;
+}
+* {
+	margin: 0;
+	padding: 0px;
+    font-family: 'Roboto Slab',Arial,sans-serif;
+}
+body {
+	background: var(--main-bg-color);
+	color: var(--second-bg-color);
+	padding-top: 100px;
+	height: 100%;
+	margin-bottom: -60px;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab',Arial,sans-serif;
+	font-weight: 700;
+}
+
+p {
+	padding: 0;
+	margin-bottom: 12px;
+    font-family: 'Roboto Slab',Arial,sans-serif;
+	font-weight: 300;
+	font-size: 1.1rem;
+	line-height: 24px;
+	color: var(--third-bg-color);
+	margin-top: 10px;
+}
+
+.navbar{
+	background-color: var(--main-bg-color);
+}
+
+html,
+section{
+	padding-bottom: 1rem;
+}
+.clear {
+	clear: both;
+	display: block;
+	font-size: 0;
+	height: 0;
+	line-height: 0;
+	width:100%;
+}
+
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+h1 {
+	color: var(--second-bg-color);
+}
+
+.section-footer .marg {
+	padding-bottom: 30px;
+}
+
+.section-footer {
+	background-color: #2f2f2f;
+	color: white;
+}
+
+.section-footer p {
+	color: whitesmoke;
+}
+
+
+
+.landing{
+	margin-bottom: 50px;
+}
+
+.lading h3{
+	color: var(--third-bg-color);
+}
+
+
+.landing hr {
+	border-top: 1px solid var(--third-bg-color);
+	margin: auto;
+	width: 50%;
+	margin-bottom: 60px;
+}
+
+
+.box-no-border {
+	padding: 30px 15px;
+	border: 3px double;
+	border-color: #e8e8e8;
+	text-align: center;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.box-no-border:hover{
+	box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+ion-icon {
+	color: var(--third-bg-color);
+	font-size: 2rem;
+}
+
+
+.btn{
+	color: #fff;
+	background-color: #A79A74;
+	border-color: #A79A74;
+}
+
+.highlight{
+	background-color: #F3F3F3;
+	padding: 10px 10px 10px 10px;
+	padding-bottom: 10px;
+}
+
+.form-control {
+	margin-top: 20px;
+}
+.form-control btn{
+	width: 50%;
+}
+
+.iti{
+	margin-top: 1rem;
+}
+.intl-tel-input {
+  display: block;
+  width: 50%;
+}
+
+
+li a{
+	color: var(--second-bg-color);
+}
+tbody{
+	color: #2f2f2f;
+
+}
+
+.cf a{
+	color: var(--second-bg-color);
+}
+
+.controls btn{
+	color : var(--second-bg-color);
+}
+
+.navbar-brand img{
+	height: 50px;
+	width: 50px;
+}
+
+footer{
+	background: #2f2f2f;
+	color: ghostwhite;
+	height: 60px;
+
+}
+
+
+@media only screen and (max-width: 768px) {
+	.dropdown-menu{
+		margin-left: 0 !important;
+	}
+
+	footer{
+        position: fixed;
+        bottom: 0;
+    }
+
+	.end{
+		margin-bottom: 5rem;
+	}
+
+}

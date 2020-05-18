@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section>
+    <div class="vh-100 container">
+        <h1 class="text-center">Verification</h1>
+        <hr>
+        <div class="d-flex justify-content-center">
+            <ion-icon name="book-outline" size="large"></ion-icon>
+        </div>
+            <div class="d-flex justify-content-center">
+                <p><span> Up on registration you have receive an email with instructions how to verify your email , please check your inbox !</span>
+                </p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p><span>Your verification cod expired ? Please click on button below in order to receive verification email</span>
+                </p>
+            </div>
+        <div class="d-flex justify-content-center">
+            <form method="POST">
+            {{ form.hidden_tag () }}
+            <div class="col">
+            {{ form.submit(class='btn form-control') }}
+            </div>
+            </form>
+        </div>
+        </div>
+{% endblock %}

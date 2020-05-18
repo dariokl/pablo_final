@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% block head %}
+{{ super () }}
+<style>
+@media only screen and (max-width: 768px) {
+	footer{
+        position: fixed;
+        bottom: 0;
+    }
+    .btn{
+        margin-bottom: 5rem;
+    }
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="min-vh-100">
+    <div class="container">
+        <div class="card">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+                <div class="row">
+                    <div class="col text-center">
+                        <h1>Register</h1>
+                        <p class="text-h3">Welcome dear visitor in order to see training catalogue please take your time and register on our web page </p>
+                    </div>
+                </div>
+                <form method="POST">
+                  {{ form.hidden_tag() }}
+                <div class="row align-items-center mt-4">
+                    <div class="col">
+                        {{ form.first_name(class='form-control', placeholder='First Name')}}
+                    </div>
+                    <div class="col">
+                        {{ form.last_name(class='form-control', placeholder='Last name')}}
+                    </div>
+                </div>
+                        <div class="row align-items-center mt-4">
+                    <div class="col">
+                        {{ form.email(class='form-control', placeholder='Email')}}
+                    </div>
+                </div>
+
+                <div class="row align-items-center mt-4">
+                    <div class="col">
+                        {{ form.password(class='form-control', placeholder='Password')}}
+                    </div>
+                    <div class="col">
+                        {{ form.pass_confirm(class='form-control', placeholder='Confirm Password')}}
+                    </div>
+                </div>
+                    <div class="row align-items-center mt-4">
+                    <div class="col">
+                        {{ form.city(class='form-control', placeholder='City')}}
+                    </div>
+                    <div class="col">
+                        {{ form.country(class='form-control', placeholder='Country')}}
+                    </div>
+                    </div>
+                    <div class="row align-items-center mt-4">
+                    <div class="col-6">
+                        {{ form.company(class='form-control', placeholder='Company Name')}}
+                    </div>
+                    <div class="col">
+                        {{ form.phone(class='form-control', id='phone' ) }}
+                    </div>
+                    </div>
+                      <div class="row align-items-center mt-4">
+                    <div class="col">
+                        {{ form.vat(class='form-control', placeholder="VAT / Tax ID") }}
+                    </div>
+                      </div>
+                    <div class="col mb-5 text-center">
+                        {{ form.submit( class='btn btn-dark mt-4' )}}
+                         </form>
+                        </div>
+            </div>
+         </div>
+       </div>
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-6 text-center">
+            <h1> Having troubles ? </h1>
+            <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus consectetur corporis deleniti deserunt dignissimos ea praesentium! Ab beatae facilis minima minus non odit quam quod voluptate. Dolore et nisi sed.</span>
+            </p>
+            <a class="btn" href="{{url_for('core.contact_us')}}">Contact us</a>
+            <hr>
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-6 text-center">
+            <h1>Already have an account ?</h1>
+            <p>
+                <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi autem dolorem optio tempora. Consequuntur, distinctio, quod. A asperiores, commodi, consequatur cumque debitis, id magni nam nisi possimus repellat ut veniam!</span>
+            </p>
+            <a class="btn" href="{{url_for('users.login')}}">Log In</a>
+            <hr>
+        </div>
+    </div>
+</div>
+</section>
+
+
+{% block scripts %}
+<script>
+    $(document).ready(function () {
+        var wtf_phone_field = document.getElementById('phone');
+        wtf_phone_field.style.position = 'absolute';
+        wtf_phone_field.style.top = '-9999px';
+        wtf_phone_field.style.left = '-9999px';
+        wtf_phone_field.parentElement.insertAdjacentHTML('beforeend', '<div><input class="col" type="tel" id="_phone"></div>');
+        var fancy_phone_field = document.getElementById('_phone');
+        var fancy_phone_iti = window.intlTelInput(fancy_phone_field, {
+            separateDialCode: true,
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.0/js/utils.js",
+
+        });
+        fancy_phone_iti.setNumber(wtf_phone_field.value);
+        fancy_phone_field.addEventListener('blur', function () {
+            wtf_phone_field.value = fancy_phone_iti.getNumber();
+        });
+    });
+</script>
+{% endblock %}
+{% endblock %}
+

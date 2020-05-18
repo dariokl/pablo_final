@@ -1,0 +1,4 @@
+New email, from {{ sender }}
+{{ name }} from company : {{ company }}
+{{ text }}
+

@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block head %}
+{{ super () }}
+<style>
+@media only screen and (max-width: 768px) {
+	footer{
+        position: fixed;
+        bottom: 0;
+    }
+    form{
+        margin-bottom: 5rem;
+    }
+}
+</style>
+{% endblock %}
+{% block content %}
+<section class="min-vh-100">
+<div class="container">
+    <div class="d-flex justify-content-center">
+        <ion-icon name="build-outline" size="large"></ion-icon>
+    </div>
+    <h1 class="text-center">CONTACT US</h1>
+    <hr>
+    <div class="row">
+        <div class="col">
+            <h3> Our company </h3>
+        </div>
+        <div class="col">
+            <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur delectus ducimus in placeat, recusandae vitae. Accusantium consequatur culpa, doloremque eligendi, esse laboriosam libero molestiae nemo, nulla officia quaerat voluptatibus.</span>
+            </p>
+        </div>
+        <div class="col">
+            <pre>
+                <strong>Address</strong> : Avenue
+                <strong>Phone</strong> : 777-777
+                <strong>Phone</strong>  : a@mail.com
+            </pre>
+        </div>
+    </div>
+    <div class="row justify-content-right">
+        <div class="col-md-6"></div>
+        <div class="col-md-6">
+              <form  method="POST">
+    <h3>Quick Contact</h3>
+    <h4>If you have any questions contact us ! </h4>
+
+        {{ form.hidden_tag() }}
+        <div class="col">
+            {{ form.email(class='form-control', placeholder='Email')}}
+        </div>
+        <div class="col">
+            {{ form.name(class='form-control', placeholder='Full name') }}
+        </div>
+        <div class="col">
+            {{ form.company(class='form-control', placeholder='Company Name')}}
+        </div>
+        <div class="col">
+            {{ form.text(class='form-control', placeholder='Write here')}}
+        </div>
+        <div class="col text-center mt-3 mb-2">
+            {{ form.submit(class='btn from-control') }}
+        </div>
+  </form>
+</div>
+</div>
+</div>
+</section>
+
+{% endblock %}

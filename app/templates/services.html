@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% block head %}
+{{ super () }}
+<style>
+    .card{
+        margin-bottom: 1rem;
+    }
+    .card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+</style>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="d-flex justify-content-center">
+        <ion-icon name="build-outline" size="large"></ion-icon>
+    </div>
+    <h1 class="text-center">Strategy</h1>
+    <hr>
+       <div class="col">
+        <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus accusantium at atque deleniti eligendi, expedita labore necessitatibus officia, omnis perferendis placeat reiciendis reprehenderit saepe temporibus, veniam voluptatibus. Iste, minus.</span><span>Aut minima tenetur ullam. Cum eum harum natus quam vel? Accusantium blanditiis cupiditate dolorem excepturi facilis nam, nostrum praesentium quaerat quam quidem quis quod, reprehenderit, repudiandae veniam vitae voluptatibus voluptatum.</span>
+        </p>
+        <hr>
+    </div>
+</div>
+<section>
+    <div class="container">
+           <div class="row">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="card">
+                        <img class="card-img-top"
+                             src="/static/images/implantacion.jpg"
+                             alt="Bologna">
+                        <div class="card-body">
+                            <h4 class="card-title">Implementation</h4>
+                            <h6 class="card-subtitle mb-2 text-muted">Dummy text</h6>
+                            <p class="card-text"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consequuntur cum deleniti dolores ducimus eaque excepturi hic id impedit minima nulla, perferendis provident ratione saepe sed sit, soluta sunt, suscipit?</span> </p>
+                            <a href="{{ url_for('core.implementation') }}" class="card-link">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                       <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="card">
+                        <img class="card-img-top"
+                             src="/static/images/arquitectura.jpg"
+                             alt="Bologna">
+                        <div class="card-body">
+                            <h4 class="card-title">Architecture</h4>
+                            <h6 class="card-subtitle mb-2 text-muted"> Dummy text</h6>
+                            <p class="card-text"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem commodi cum deserunt error eveniet facere id, minus molestiae, obcaecati possimus reiciendis rerum tempora temporibus? Ducimus magni maxime odit sequi voluptates?</span> </p>
+                            <a href="{{ url_for('core.architecture') }}" class="card-link">Read More</a></a>
+                        </div>
+                    </div>
+                </div>
+   </div>
+                   <div class="row">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="card">
+                        <img class="card-img-top"
+                             src="/static/images/estrategia.jpg"
+                             alt="Bologna">
+                        <div class="card-body">
+                            <h4 class="card-title">Strategy</h4>
+                            <h6 class="card-subtitle mb-2 text-muted">Dummy text</h6>
+                            <p class="card-text"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consequuntur cum deleniti dolores ducimus eaque excepturi hic id impedit minima nulla, perferendis provident ratione saepe sed sit, soluta sunt, suscipit?</span> </p>
+                            <a href="{{ url_for('core.strategy') }}" class="card-link">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                       <div class="col-12 col-sm-12 col-md-6 col-lg-6 end">
+                    <div class="card">
+                        <img class="card-img-top"
+                             src="/static/images/formacion.jpg"
+                             alt="Bologna">
+                        <div class="card-body">
+                            <h4 class="card-title">Training</h4>
+                            <h6 class="card-subtitle mb-2 text-muted"> Dummy text</h6>
+                            <p class="card-text"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem commodi cum deserunt error eveniet facere id, minus molestiae, obcaecati possimus reiciendis rerum tempora temporibus? Ducimus magni maxime odit sequi voluptates?</span> </p>
+                            <a href="{{url_for('core.courses') }}" class="card-link">Read More</a>
+                            <a href="{{url_for('core.booking') }}" class="card-link">Book an Appointment</a>
+                        </div>
+                    </div>
+                </div>
+   </div>
+
+   </div>
+</section>
+
+{% endblock %}
