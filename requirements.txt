@@ -21,7 +21,7 @@ idna==2.9
 itsdangerous==1.1.0
 Jinja2==2.11.2
 kombu==4.6.8
-Mako==1.1.2
+Mako==1.2.2
 MarkupSafe==1.1.1
 mysql-connector-python==8.0.20
 phonenumbers==8.12.3
